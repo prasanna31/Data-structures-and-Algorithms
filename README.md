@@ -3,7 +3,7 @@
 
 ## Two Pointers 
 
-. Two Pointers - Find Pair with Given Sum   ** DONE **
+1. Two Pointers - Find Pair with Given Sum   ** DONE **
 2. Two Pointers - Remove Duplicates from Sorted Array   ** DONE **
 3. Two Pointers - Container With Most Water   ** DONE **
 4. Two Pointers - Merge Two Sorted Arrays   ** DONE **
