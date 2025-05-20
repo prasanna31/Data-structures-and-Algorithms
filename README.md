@@ -2,175 +2,185 @@
 # Arrays
 
 ## Two Pointers 
-Two Pointers   ## ----- Done |||||| 
-Two Pointers - Find Pair with Given Sum   ## ----- Done |||||| 
-Two Pointers - Remove Duplicates from Sorted Array   ## ----- Done |||||| 
-Two Pointers - Container With Most Water   ## ----- Done |||||| 
-Two Pointers - Merge Two Sorted Arrays   ## ----- Done |||||| 
-Two Pointers - Intersection of Two Arrays II   ## ----- Done |||||| 
-Two Pointers - Move Zeroes to End   ## ----- Done |||||| 
-Two Pointers - Sort Array of 0s, 1s, and 2s   ## ----- Done |||||| 
-Two Pointers - Longest Substring Without Repeating Characters   ## ----- Done |||||| 
-Two Pointers - Trapping Rain Water   ## ----- Done |||||| 
-Two Pointers - Valid Palindrome II   ## ----- Done |||||| 
-Two Pointers - Partition Array Around a Pivot   ## ----- Done |||||| 
-Two Pointers - Squares of a Sorted Array   ## ----- Done |||||| 
-Two Pointers - Find All Triplets That Sum to Zero   ## ----- Done |||||| 
-Two Pointers - Minimum Size Subarray Sum   ## ----- Done |||||| 
-Two Pointers - Subarray Product Less Than K   ## ----- Done |||||| 
-Two Pointers - Remove Element In-Place   ## ----- Done |||||| 
-Two Pointers - Find K Closest Elements   ## ----- Done |||||| 
-Two Pointers - Sort Array By Parity   ## ----- Done |||||| 
-Two Pointers - Merge Intervals (Based on sorted ends)   ## ----- Done |||||| 
-Two Pointers - Valid Mountain Array   ## ----- Done |||||| 
-Two Pointers - Check If Array Is Monotonic   ## ----- Done |||||| 
-Two Pointers - Sum of Two Arrays   ## ----- Done |||||| 
-Two Pointers - Rotate Array by K Steps   ## ----- Done |||||| 
-Two Pointers - Subarrays with Equal Number of 0s and 1s   ## ----- Done |||||| 
-Two Pointers - Max Consecutive Ones III   ## ----- Done |||||| 
-Two Pointers - Longest Repeating Character Replacement   ## ----- Done |||||| 
-Two Pointers - Split Array into Consecutive Subsequences   ## ----- Done |||||| 
-Two Pointers - Find Duplicate Number   ## ----- Done |||||| 
-Two Pointers - Maximise Distance to Closest Person   ## ----- Done |||||| 
-Two Pointers - Find Peak Element   ## ----- Done |||||| 
-## Sliding Window   ## ----- Done |||||| 
-Sliding Window - Maximum Sum Subarray of Size K   ## ----- Done |||||| 
-Sliding Window - Minimum Window Substring   ## ----- Done |||||| 
-Sliding Window - Longest Substring with At Most K Distinct Characters   ## ----- Done |||||| 
-Sliding Window - Count Number of Anagrams   ## ----- Done |||||| 
-Sliding Window - Find All Anagrams in a String   ## ----- Done |||||| 
-Sliding Window - Longest Repeating Character Replacement   ## ----- Done |||||| 
-Sliding Window - Fruit Into Baskets   ## ----- Done |||||| 
-Sliding Window - Subarrays with K Different Integers   ## ----- Done |||||| 
-Sliding Window - Maximum Number of Vowels in Substring   ## ----- Done |||||| 
-Sliding Window - Minimum Size Subarray Sum   ## ----- Done |||||| 
-Sliding Window - Number of Subarrays with Sum K   ## ----- Done |||||| 
-Sliding Window - Longest Subarray with Ones After Replacement   ## ----- Done |||||| 
-Sliding Window - Longest Substring Without Repeating Characters   ## ----- Done |||||| 
-Sliding Window - Maximum Average Subarray   ## ----- Done |||||| 
-Sliding Window - Count Number of Nice Subarrays   ## ----- Done |||||| 
-Sliding Window - Longest Substring with At Most Two Distinct Characters   ## ----- Done |||||| 
-Sliding Window - Longest Substring with Exactly K Distinct Characters   ## ----- Done |||||| 
-Sliding Window - Longest Substring Without Repeating Vowels   ## ----- Done |||||| 
-Sliding Window - Subarray Product Less Than K   ## ----- Done |||||| 
-Sliding Window - Number of Subarrays with Bounded Maximum   ## ----- Done |||||| 
-Sliding Window - Longest Subarray with At Most K Odd Numbers   ## ----- Done |||||| 
-Sliding Window - Minimum Window Containing All Characters   ## ----- Done |||||| 
-Sliding Window - Longest Substring With At Least K Repeating Characters   ## ----- Done |||||| 
-Sliding Window - Maximum Number of Balls in a Box   ## ----- Done |||||| 
-Sliding Window - Longest Continuous Subarray with Absolute Diff ≤ Limit   ## ----- Done |||||| 
-Sliding Window - Maximum Number of Non-Overlapping Subarrays with Sum Equals Target   ## ----- Done |||||| 
-Sliding Window - Number of Subarrays With Odd Sum   ## ----- Done |||||| 
-Sliding Window - Count Subarrays with Median K   ## ----- Done |||||| 
-Sliding Window - Longest Substring Without Repeating Characters with Replacement   ## ----- Done |||||| 
-Sliding Window - Count Good Substrings   ## ----- Done |||||| 
-## Prefix Sum   ## ----- Done |||||| 
-Prefix Sum - Subarray Sum Equals K   ## ----- Done |||||| 
-Prefix Sum - Find Equilibrium Index   ## ----- Done |||||| 
-Prefix Sum - Count Subarrays with Sum Divisible by K   ## ----- Done |||||| 
-Prefix Sum - Maximum Size Subarray Sum Equals K   ## ----- Done |||||| 
-Prefix Sum - Continuous Subarray Sum   ## ----- Done |||||| 
-Prefix Sum - Number of Subarrays with Bounded Maximum   ## ----- Done |||||| 
-Prefix Sum - Range Sum Query   ## ----- Done |||||| 
-Prefix Sum - Find Pivot Index   ## ----- Done |||||| 
-Prefix Sum - Count Ways to Split Array into Equal Sum Parts   ## ----- Done |||||| 
-Prefix Sum - Find Longest Balanced Subarray   ## ----- Done |||||| 
-Prefix Sum - Number of Subarrays with Sum in Range   ## ----- Done |||||| 
-Prefix Sum - Maximum Length of Subarray With Positive Product   ## ----- Done |||||| 
-Prefix Sum - Count Number of Subarrays with Equal Number of 0s and 1s   ## ----- Done |||||| 
-Prefix Sum - Number of Subarrays with Sum Equals Target   ## ----- Done |||||| 
-Prefix Sum - Count Subarrays with Sum Less Than K   ## ----- Done |||||| 
-Prefix Sum - Find Total Strength of Wizards   ## ----- Done |||||| 
-Prefix Sum - Sum of Subarray Minimums   ## ----- Done |||||| 
-Prefix Sum - Sum of Subarray Ranges   ## ----- Done |||||| 
-Prefix Sum - Find Number of Subarrays with Average Greater Than or Equal to K   ## ----- Done |||||| 
-Prefix Sum - Count of Range Sum   ## ----- Done |||||| 
-Prefix Sum - Minimum Size Subarray Sum   ## ----- Done |||||| 
-Prefix Sum - Maximum Average Subarray II   ## ----- Done |||||| 
-Prefix Sum - Find Longest Arithmetic Subarray   ## ----- Done |||||| 
-Prefix Sum - Count Subarrays with Product Less Than K   ## ----- Done |||||| 
-Prefix Sum - Sum of All Odd Length Subarrays   ## ----- Done |||||| 
-Prefix Sum - Find Number of Subarrays with Sum Divisible by M   ## ----- Done |||||| 
-Prefix Sum - Number of Ways to Split Array Into Three Subarrays with Equal Sum   ## ----- Done |||||| 
-Prefix Sum - Find Subarray with Given Sum   ## ----- Done |||||| 
-Prefix Sum - Maximum Length of Subarray With Sum K   ## ----- Done |||||| 
-Prefix Sum - Number of Subarrays With Exactly K Odd Numbers   ## ----- Done |||||| 
-## Binary Search on Array   ## ----- Done |||||| 
-Binary Search - Find Peak Element   ## ----- Done |||||| 
-Binary Search - Find Minimum in Rotated Sorted Array   ## ----- Done |||||| 
-Binary Search - Find Kth Smallest Element in Sorted Matrix   ## ----- Done |||||| 
-Binary Search - Search in Rotated Sorted Array   ## ----- Done |||||| 
-Binary Search - Find First and Last Position of Element in Sorted Array   ## ----- Done |||||| 
-Binary Search - Median of Two Sorted Arrays   ## ----- Done |||||| 
-Binary Search - Find Smallest Letter Greater Than Target   ## ----- Done |||||| 
-Binary Search - Split Array Largest Sum   ## ----- Done |||||| 
-Binary Search - Capacity To Ship Packages Within D Days   ## ----- Done |||||| 
-Binary Search - Koko Eating Bananas   ## ----- Done |||||| 
-Binary Search - Find Position to Insert Element   ## ----- Done |||||| 
-Binary Search - Find Peak Index in Mountain Array   ## ----- Done |||||| 
-Binary Search - Search in 2D Matrix   ## ----- Done |||||| 
-Binary Search - Find Element in Infinite Sorted Array   ## ----- Done |||||| 
-Binary Search - Find Fixed Point (Index equals Value)   ## ----- Done |||||| 
-Binary Search - Find First Bad Version   ## ----- Done |||||| 
-Binary Search - Find Square Root of Number   ## ----- Done |||||| 
-Binary Search - Find Minimum in Rotated Sorted Array II   ## ----- Done |||||| 
-Binary Search - Find Median in Data Stream   ## ----- Done |||||| 
-Binary Search - Find Rotation Count in Rotated Array   ## ----- Done |||||| 
-Binary Search - Find Minimum Difference Element   ## ----- Done |||||| 
-Binary Search - Find Range Sum Query   ## ----- Done |||||| 
-Binary Search - Find Maximum Average Subarray   ## ----- Done |||||| 
-Binary Search - Find Element in Nearly Sorted Array   ## ----- Done |||||| 
-Binary Search - Find Closest Element to Target   ## ----- Done |||||| 
-Binary Search - Find Maximum in Bitonic Array   ## ----- Done |||||| 
-Binary Search - Find Missing Number   ## ----- Done |||||| 
-Binary Search - Allocate Minimum Number of Pages   ## ----- Done |||||| 
-Binary Search - Split Array to Minimize Largest Sum   ## ----- Done |||||| 
-Binary Search - Find Peak Element with Duplicates   ## ----- Done |||||| 
-## Sorting / Partitioning   ## ----- Done |||||| 
-Sorting - Sort Colors (Dutch National Flag Problem)   ## ----- Done |||||| 
-Sorting - Merge Intervals   ## ----- Done |||||| 
-Sorting - Find Kth Largest Element   ## ----- Done |||||| 
-Sorting - Sort Array By Parity   ## ----- Done |||||| 
-Sorting - Wiggle Sort   ## ----- Done |||||| 
-Sorting - Sort Array of Squares   ## ----- Done |||||| 
-Sorting - Minimum Number of Swaps to Sort Array   ## ----- Done |||||| 
-Sorting - Count Inversions in Array   ## ----- Done |||||| 
-Sorting - Relative Sort Array   ## ----- Done |||||| 
-Sorting - Largest Number Formed by Array   ## ----- Done |||||| 
-Partitioning - Dutch National Flag Problem   ## ----- Done |||||| 
-Partitioning - Partition Array into Disjoint Intervals   ## ----- Done |||||| 
-Partitioning - Sort Array According to Another Array   ## ----- Done |||||| 
-Partitioning - Partition Labels   ## ----- Done |||||| 
-Partitioning - Sort Array by Increasing Frequency   ## ----- Done |||||| 
-Partitioning - Find the Kth Smallest Pair Distance   ## ----- Done |||||| 
-Partitioning - Split Array Into Consecutive Subsequences   ## ----- Done |||||| 
-Partitioning - Minimum Number of Increments on Subarrays   ## ----- Done |||||| 
-Partitioning - Find Pivot Index   ## ----- Done |||||| 
-Partitioning - Longest Increasing Subsequence via Patience Sorting   ## ----- Done |||||| 
-Partitioning - Sort Characters By Frequency   ## ----- Done |||||| 
-Partitioning - K Closest Points to Origin   ## ----- Done |||||| 
-Partitioning - Sort Array by Parity II   ## ----- Done |||||| 
-Partitioning - Move All Negative Numbers to Beginning   ## ----- Done |||||| 
-Partitioning - Sort Array By Increasing Frequency   ## ----- Done |||||| 
-Partitioning - Maximize Distance Between Same Elements   ## ----- Done |||||| 
-Partitioning - Minimum Number of Moves to Make Array Complementary   ## ----- Done |||||| 
-Partitioning - Partition Array for Maximum Sum   ## ----- Done |||||| 
-Partitioning - Max Chunks To Make Sorted   ## ----- Done |||||| 
-Partitioning - Sort Array with Odd Even Index Constraints   ## ----- Done |||||| 
-Here’s a markdown list of 50 Linked List problems categorized by common linked list techniques:   ## ----- Done |||||| 
-# Linked Lists   ## ----- Done |||||| 
-## Basic Linked List Operations   ## ----- Done |||||| 
-Reverse a Linked List   ## ----- Done |||||| 
-Detect Cycle in a Linked List   ## ----- Done |||||| 
-Find the Middle of a Linked List   ## ----- Done |||||| 
-Merge Two Sorted Linked Lists   ## ----- Done |||||| 
-Remove Nth Node From End of List   ## ----- Done |||||| 
-Delete a Node in a Linked List (Given only access to that node)   ## ----- Done |||||| 
-Intersection of Two Linked Lists   ## ----- Done |||||| 
-Check if Linked List is Palindrome   ## ----- Done |||||| 
-Copy List with Random Pointer   ## ----- Done |||||| 
-Remove Duplicates from Sorted Linked List  ## ----- Done ||||||  
 
+. Two Pointers - Find Pair with Given Sum   ** DONE **
+2. Two Pointers - Remove Duplicates from Sorted Array   ** DONE **
+3. Two Pointers - Container With Most Water   ** DONE **
+4. Two Pointers - Merge Two Sorted Arrays   ** DONE **
+5. Two Pointers - Intersection of Two Arrays II   ** DONE **
+6. Two Pointers - Move Zeroes to End   ** DONE **
+7. Two Pointers - Sort Array of 0s, 1s, and 2s   ** DONE **
+8. Two Pointers - Longest Substring Without Repeating Characters   ** DONE **
+9. Two Pointers - Trapping Rain Water   ** DONE **
+10. Two Pointers - Valid Palindrome II   ** DONE **
+11. Two Pointers - Partition Array Around a Pivot   ** DONE **
+12. Two Pointers - Squares of a Sorted Array   ** DONE **
+13. Two Pointers - Find All Triplets That Sum to Zero   ** DONE **
+14. Two Pointers - Minimum Size Subarray Sum   ** DONE **
+15. Two Pointers - Subarray Product Less Than K   ** DONE **
+16. Two Pointers - Remove Element In-Place   ** DONE **
+17. Two Pointers - Find K Closest Elements   ** DONE **
+18. Two Pointers - Sort Array By Parity   ** DONE **
+19. Two Pointers - Merge Intervals (Based on sorted ends)   ** DONE **
+20. Two Pointers - Valid Mountain Array   ** DONE **
+21. Two Pointers - Check If Array Is Monotonic   ** DONE **
+22. Two Pointers - Sum of Two Arrays   ** DONE **
+23. Two Pointers - Rotate Array by K Steps   ** DONE **
+24. Two Pointers - Subarrays with Equal Number of 0s and 1s   ** DONE **
+25. Two Pointers - Max Consecutive Ones III   ** DONE **
+26. Two Pointers - Longest Repeating Character Replacement   ** DONE **
+27. Two Pointers - Split Array into Consecutive Subsequences   ** DONE **
+28. Two Pointers - Find Duplicate Number   ** DONE **
+29. Two Pointers - Maximise Distance to Closest Person   ** DONE **
+30. Two Pointers - Find Peak Element   ** DONE **
+
+## Sliding Window ** DONE **
+
+31. Sliding Window - Maximum Sum Subarray of Size K   ** DONE **
+32. Sliding Window - Minimum Window Substring   ** DONE **
+33. Sliding Window - Longest Substring with At Most K Distinct Characters   ** DONE **
+34. Sliding Window - Count Number of Anagrams   ** DONE **
+35. Sliding Window - Find All Anagrams in a String   ** DONE **
+36. Sliding Window - Longest Repeating Character Replacement   ** DONE **
+37. Sliding Window - Fruit Into Baskets   ** DONE **
+38. Sliding Window - Subarrays with K Different Integers   ** DONE **
+39. Sliding Window - Maximum Number of Vowels in Substring   ** DONE **
+40. Sliding Window - Minimum Size Subarray Sum   ** DONE **
+41. Sliding Window - Number of Subarrays with Sum K   ** DONE **
+42. Sliding Window - Longest Subarray with Ones After Replacement   ** DONE **
+43. Sliding Window - Longest Substring Without Repeating Characters   ** DONE **
+44. Sliding Window - Maximum Average Subarray   ** DONE **
+45. Sliding Window - Count Number of Nice Subarrays   ** DONE **
+46. Sliding Window - Longest Substring with At Most Two Distinct Characters   ** DONE **
+47. Sliding Window - Longest Substring with Exactly K Distinct Characters   ** DONE **
+48. Sliding Window - Longest Substring Without Repeating Vowels   ** DONE **
+49. Sliding Window - Subarray Product Less Than K   ** DONE **
+50. Sliding Window - Number of Subarrays with Bounded Maximum   ** DONE **
+51. Sliding Window - Longest Subarray with At Most K Odd Numbers   ** DONE **
+52. Sliding Window - Minimum Window Containing All Characters   ** DONE **
+53. Sliding Window - Longest Substring With At Least K Repeating Characters   ** DONE **
+54. Sliding Window - Maximum Number of Balls in a Box   ** DONE **
+55. Sliding Window - Longest Continuous Subarray with Absolute Diff ≤ Limit   ** DONE **
+56. Sliding Window - Maximum Number of Non-Overlapping Subarrays with Sum Equals Target   ** DONE **
+57. Sliding Window - Number of Subarrays With Odd Sum   ** DONE **
+58. Sliding Window - Count Subarrays with Median K   ** DONE **
+59. Sliding Window - Longest Substring Without Repeating Characters with Replacement   ** DONE **
+60. Sliding Window - Count Good Substrings   ** DONE **
+
+## Prefix Sum  ** DONE **
+
+61. Prefix Sum - Subarray Sum Equals K   ** DONE **
+62. Prefix Sum - Find Equilibrium Index   ** DONE **
+63. Prefix Sum - Count Subarrays with Sum Divisible by K   ** DONE **
+64. Prefix Sum - Maximum Size Subarray Sum Equals K   ** DONE **
+65. Prefix Sum - Continuous Subarray Sum   ** DONE **
+66. Prefix Sum - Number of Subarrays with Bounded Maximum   ** DONE **
+67. Prefix Sum - Range Sum Query   ** DONE **
+68. Prefix Sum - Find Pivot Index   ** DONE **
+69. Prefix Sum - Count Ways to Split Array into Equal Sum Parts   ** DONE **
+70. Prefix Sum - Find Longest Balanced Subarray   ** DONE **
+71. Prefix Sum - Number of Subarrays with Sum in Range   ** DONE **
+72. Prefix Sum - Maximum Length of Subarray With Positive Product   ** DONE **
+73. Prefix Sum - Count Number of Subarrays with Equal Number of 0s and 1s   ** DONE **
+74. Prefix Sum - Number of Subarrays with Sum Equals Target   ** DONE **
+75. Prefix Sum - Count Subarrays with Sum Less Than K   ** DONE **
+76. Prefix Sum - Find Total Strength of Wizards   ** DONE **
+77. Prefix Sum - Sum of Subarray Minimums   ** DONE **
+78. Prefix Sum - Sum of Subarray Ranges   ** DONE **
+79. Prefix Sum - Find Number of Subarrays with Average Greater Than or Equal to K   ** DONE **
+80. Prefix Sum - Count of Range Sum   ** DONE **
+81. Prefix Sum - Minimum Size Subarray Sum   ** DONE **
+82. Prefix Sum - Maximum Average Subarray II   ** DONE **
+83. Prefix Sum - Find Longest Arithmetic Subarray   ** DONE **
+84. Prefix Sum - Count Subarrays with Product Less Than K   ** DONE **
+85. Prefix Sum - Sum of All Odd Length Subarrays   ** DONE **
+86. Prefix Sum - Find Number of Subarrays with Sum Divisible by M   ** DONE **
+87. Prefix Sum - Number of Ways to Split Array Into Three Subarrays with Equal Sum   ** DONE **
+88. Prefix Sum - Find Subarray with Given Sum   ** DONE **
+89. Prefix Sum - Maximum Length of Subarray With Sum K   ** DONE **
+90. Prefix Sum - Number of Subarrays With Exactly K Odd Numbers   ** DONE **
+
+## Binary Search on Array ** DONE **
+
+91. Binary Search - Find Peak Element   ** DONE **
+92. Binary Search - Find Minimum in Rotated Sorted Array   ** DONE **
+93. Binary Search - Find Kth Smallest Element in Sorted Matrix   ** DONE **
+94. Binary Search - Search in Rotated Sorted Array   ** DONE **
+95. Binary Search - Find First and Last Position of Element in Sorted Array   ** DONE **
+96. Binary Search - Median of Two Sorted Arrays   ** DONE **
+97. Binary Search - Find Smallest Letter Greater Than Target   ** DONE **
+98. Binary Search - Split Array Largest Sum   ** DONE **
+99. Binary Search - Capacity To Ship Packages Within D Days   ** DONE **
+100. Binary Search - Koko Eating Bananas   ** DONE **
+101. Binary Search - Find Position to Insert Element   ** DONE **
+102. Binary Search - Find Peak Index in Mountain Array   ** DONE **
+103. Binary Search - Search in 2D Matrix   ** DONE **
+104. Binary Search - Find Element in Infinite Sorted Array   ** DONE **
+105. Binary Search - Find Fixed Point (Index equals Value)   ** DONE **
+106. Binary Search - Find First Bad Version   ** DONE **
+107. Binary Search - Find Square Root of Number   ** DONE **
+108. Binary Search - Find Minimum in Rotated Sorted Array II   ** DONE **
+109. Binary Search - Find Median in Data Stream   ** DONE **
+110. Binary Search - Find Rotation Count in Rotated Array   ** DONE **
+111. Binary Search - Find Minimum Difference Element   ** DONE **
+112. Binary Search - Find Range Sum Query   ** DONE **
+113. Binary Search - Find Maximum Average Subarray   ** DONE **
+114. Binary Search - Find Element in Nearly Sorted Array   ** DONE **
+115. Binary Search - Find Closest Element to Target   ** DONE **
+116. Binary Search - Find Maximum in Bitonic Array   ** DONE **
+117. Binary Search - Find Missing Number   ** DONE **
+118. Binary Search - Allocate Minimum Number of Pages   ** DONE **
+119. Binary Search - Split Array to Minimize Largest Sum   ** DONE **
+120. Binary Search - Find Peak Element with Duplicates   ** DONE **
+
+## Sorting / Partitioning  ** DONE **
+
+121. Sorting - Sort Colors (Dutch National Flag Problem)   ** DONE **
+122. Sorting - Merge Intervals   ** DONE **
+123. Sorting - Find Kth Largest Element   ** DONE **
+124. Sorting - Sort Array By Parity   ** DONE **
+125. Sorting - Wiggle Sort   ** DONE **
+126. Sorting - Sort Array of Squares   ** DONE **
+127. Sorting - Minimum Number of Swaps to Sort Array   ** DONE **
+128. Sorting - Count Inversions in Array   ** DONE **
+129. Sorting - Relative Sort Array   ** DONE **
+130. Sorting - Largest Number Formed by Array   ** DONE **
+131. Partitioning - Dutch National Flag Problem   ** DONE **
+132. Partitioning - Partition Array into Disjoint Intervals   ** DONE **
+133. Partitioning - Sort Array According to Another Array   ** DONE **
+134. Partitioning - Partition Labels   ** DONE **
+135. Partitioning - Sort Array by Increasing Frequency   ** DONE **
+136. Partitioning - Find the Kth Smallest Pair Distance   ** DONE **
+137. Partitioning - Split Array Into Consecutive Subsequences   ** DONE **
+138. Partitioning - Minimum Number of Increments on Subarrays   ** DONE **
+139. Partitioning - Find Pivot Index   ** DONE **
+140. Partitioning - Longest Increasing Subsequence via Patience Sorting   ** DONE **
+141. Partitioning - Sort Characters By Frequency   ** DONE **
+142. Partitioning - K Closest Points to Origin   ** DONE **
+143. Partitioning - Sort Array by Parity II   ** DONE **
+144. Partitioning - Move All Negative Numbers to Beginning   ** DONE **
+145. Partitioning - Sort Array By Increasing Frequency   ** DONE **
+146. Partitioning - Maximize Distance Between Same Elements   ** DONE **
+147. Partitioning - Minimum Number of Moves to Make Array Complementary   ** DONE **
+148. Partitioning - Partition Array for Maximum Sum   ** DONE **
+149. Partitioning - Max Chunks To Make Sorted   ** DONE **
+150. Partitioning - Sort Array with Odd Even Index Constraints   ** DONE **
+Here’s a markdown list of **50 Linked List problems** categorized by common linked list techniques: ** DONE **
+
+# Linked Lists ** DONE **
+
+## Basic Linked List Operations ** DONE **
+
+1. Reverse a Linked List   ** DONE **
+2. Detect Cycle in a Linked List   ** DONE **
+3. Find the Middle of a Linked List   ** DONE **
+4. Merge Two Sorted Linked Lists   ** DONE **
+5. Remove Nth Node From End of List   ** DONE **
+6. Delete a Node in a Linked List (Given only access to that node)   ** DONE **
+7. Intersection of Two Linked Lists   ** DONE **
+8. Check if Linked List is Palindrome   ** DONE **
+9. Copy List with Random Pointer   ** DONE **
+10. Remove Duplicates from Sorted Linked List   ** DONE **
 ## Advanced Manipulations
 
 11. Reverse Nodes in k-Group  
