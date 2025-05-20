@@ -165,4 +165,75 @@
 148. Partitioning - Partition Array for Maximum Sum  
 149. Partitioning - Max Chunks To Make Sorted  
 150. Partitioning - Sort Array with Odd Even Index Constraints  
+Here’s a markdown list of **50 Linked List problems** categorized by common linked list techniques:
+
+# Linked Lists
+
+## Basic Linked List Operations
+
+1. Reverse a Linked List  
+2. Detect Cycle in a Linked List  
+3. Find the Middle of a Linked List  
+4. Merge Two Sorted Linked Lists  
+5. Remove Nth Node From End of List  
+6. Delete a Node in a Linked List (Given only access to that node)  
+7. Intersection of Two Linked Lists  
+8. Check if Linked List is Palindrome  
+9. Copy List with Random Pointer  
+10. Remove Duplicates from Sorted Linked List  
+
+## Advanced Manipulations
+
+11. Reverse Nodes in k-Group  
+12. Rotate List  
+13. Flatten a Multilevel Doubly Linked List  
+14. Swap Nodes in Pairs  
+15. Add Two Numbers Represented by Linked Lists  
+16. Partition List Around a Value  
+17. Sort a Linked List using Merge Sort  
+18. Reorder List  
+19. Remove Elements with Specific Value  
+20. Convert Sorted List to Binary Search Tree  
+
+## Cycle and Loop Problems
+
+21. Find Start of Cycle in Linked List  
+22. Detect and Remove Loop in Linked List  
+23. Check if Two Linked Lists Intersect (with Cycle)  
+24. Find Length of Loop in Linked List  
+25. Find the Node where Cycle Begins  
+
+## Doubly and Circular Linked Lists
+
+26. Implement Doubly Linked List Operations  
+27. Insert Node into Sorted Doubly Linked List  
+28. Convert Binary Tree to Doubly Linked List  
+29. Implement Circular Linked List Insertion  
+30. Split Circular Linked List into Two Halves  
+
+## Specialized Problems
+
+31. Merge k Sorted Linked Lists  
+32. Clone a Linked List with Random Pointer  
+33. Remove Zero Sum Consecutive Nodes  
+34. Sort a Linked List of 0s, 1s, and 2s  
+35. Delete Middle Node of Linked List  
+
+## Miscellaneous
+
+36. Add One to a Number Represented as Linked List  
+37. Check if Linked List is a Palindrome (Recursive)  
+38. Intersection Point of Two Linked Lists  
+39. Find the Length of a Linked List  
+40. Detect Intersection Node of Y Shaped Linked Lists  
+41. Flatten a Linked List with Next and Bottom Pointers  
+42. Remove All Occurrences of a Given Value  
+43. Find the Nth Node from the Beginning  
+44. Convert Sorted Array to Balanced Linked List  
+45. Segregate Even and Odd Nodes in Linked List  
+46. Reverse Alternate K Nodes in Linked List  
+47. Delete Nodes Which Have Greater Value on Right  
+48. Rotate Doubly Linked List by N Nodes  
+49. Copy a Linked List with Next and Random Pointer  
+50. Merge Two Sorted Circular Linked Lists  
 
