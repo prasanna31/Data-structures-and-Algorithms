@@ -1,0 +1,1150 @@
+package trees
+
+import (
+	"fmt"
+	"sort"
+)
+
+// TreeNode defines a node in the binary tree.
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+// 1. Inorder Traversal (Left, Root, Right)
+func inorderTraversal(root *TreeNode) []int {
+	var res []int
+	var inorder func(*TreeNode)
+	inorder = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		inorder(node.Left)
+		res = append(res, node.Val)
+		inorder(node.Right)
+	}
+	inorder(root)
+	return res
+}
+
+// 2. Preorder Traversal (Root, Left, Right)
+func preorderTraversal(root *TreeNode) []int {
+	var res []int
+	var preorder func(*TreeNode)
+	preorder = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		res = append(res, node.Val)
+		preorder(node.Left)
+		preorder(node.Right)
+	}
+	preorder(root)
+	return res
+}
+
+// 3. Postorder Traversal (Left, Right, Root)
+func postorderTraversal(root *TreeNode) []int {
+	var res []int
+	var postorder func(*TreeNode)
+	postorder = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		postorder(node.Left)
+		postorder(node.Right)
+		res = append(res, node.Val)
+	}
+	postorder(root)
+	return res
+}
+
+// 4. Level Order Traversal (BFS)
+func levelOrder(root *TreeNode) [][]int {
+	var res [][]int
+	if root == nil {
+		return res
+	}
+	queue := []*TreeNode{root}
+	for len(queue) > 0 {
+		level := []int{}
+		n := len(queue)
+		for i := 0; i < n; i++ {
+			node := queue[0]
+			queue = queue[1:]
+			level = append(level, node.Val)
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+		}
+		res = append(res, level)
+	}
+	return res
+}
+
+// 5. Zigzag Level Order Traversal
+func zigzagLevelOrder(root *TreeNode) [][]int {
+	var res [][]int
+	if root == nil {
+		return res
+	}
+	queue := []*TreeNode{root}
+	leftToRight := true
+	for len(queue) > 0 {
+		level := make([]int, len(queue))
+		n := len(queue)
+		for i := 0; i < n; i++ {
+			node := queue[0]
+			queue = queue[1:]
+			if leftToRight {
+				level[i] = node.Val
+			} else {
+				level[n-1-i] = node.Val
+			}
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+		}
+		res = append(res, level)
+		leftToRight = !leftToRight
+	}
+	return res
+}
+
+// 6. Maximum Depth of Binary Tree
+func maxDepth(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	left := maxDepth(root.Left)
+	right := maxDepth(root.Right)
+	if left > right {
+		return left + 1
+	}
+	return right + 1
+}
+
+// 7. Minimum Depth of Binary Tree
+func minDepth(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	if root.Left == nil {
+		return minDepth(root.Right) + 1
+	}
+	if root.Right == nil {
+		return minDepth(root.Left) + 1
+	}
+	left := minDepth(root.Left)
+	right := minDepth(root.Right)
+	if left < right {
+		return left + 1
+	}
+	return right + 1
+}
+
+// 8. Symmetric Tree
+func isSymmetric(root *TreeNode) bool {
+	var isMirror func(*TreeNode, *TreeNode) bool
+	isMirror = func(l, r *TreeNode) bool {
+		if l == nil && r == nil {
+			return true
+		}
+		if l == nil || r == nil || l.Val != r.Val {
+			return false
+		}
+		return isMirror(l.Left, r.Right) && isMirror(l.Right, r.Left)
+	}
+	return isMirror(root, root)
+}
+
+// 9. Same Tree
+func isSameTree(p *TreeNode, q *TreeNode) bool {
+	if p == nil && q == nil {
+		return true
+	}
+	if p == nil || q == nil || p.Val != q.Val {
+		return false
+	}
+	return isSameTree(p.Left, q.Left) && isSameTree(p.Right, q.Right)
+}
+
+// 10. Invert Binary Tree
+func invertTree(root *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	root.Left, root.Right = invertTree(root.Right), invertTree(root.Left)
+	return root
+}
+
+// 11. Path Sum
+func hasPathSum(root *TreeNode, sum int) bool {
+	if root == nil {
+		return false
+	}
+	if root.Left == nil && root.Right == nil {
+		return root.Val == sum
+	}
+	return hasPathSum(root.Left, sum-root.Val) || hasPathSum(root.Right, sum-root.Val)
+}
+
+// 12. Path Sum II
+func pathSum(root *TreeNode, sum int) [][]int {
+	var res [][]int
+	var dfs func(*TreeNode, int, []int)
+	dfs = func(node *TreeNode, s int, path []int) {
+		if node == nil {
+			return
+		}
+		path = append(path, node.Val)
+		if node.Left == nil && node.Right == nil && node.Val == s {
+			tmp := make([]int, len(path))
+			copy(tmp, path)
+			res = append(res, tmp)
+			return
+		}
+		dfs(node.Left, s-node.Val, path)
+		dfs(node.Right, s-node.Val, path)
+	}
+	dfs(root, sum, []int{})
+	return res
+}
+
+// 13. Binary Tree Maximum Path Sum
+func maxPathSum(root *TreeNode) int {
+	maxSum := -1 << 31
+	var dfs func(*TreeNode) int
+	dfs = func(node *TreeNode) int {
+		if node == nil {
+			return 0
+		}
+		left := max(0, dfs(node.Left))
+		right := max(0, dfs(node.Right))
+		maxSum = max(maxSum, left+right+node.Val)
+		return max(left, right) + node.Val
+	}
+	dfs(root)
+	return maxSum
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+// 14. Construct Binary Tree from Preorder and Inorder Traversal
+func buildTree(preorder []int, inorder []int) *TreeNode {
+	inMap := make(map[int]int)
+	for i, v := range inorder {
+		inMap[v] = i
+	}
+	var helper func(int, int) *TreeNode
+	preIdx := 0
+	helper = func(left, right int) *TreeNode {
+		if left > right {
+			return nil
+		}
+		val := preorder[preIdx]
+		preIdx++
+		root := &TreeNode{Val: val}
+		root.Left = helper(left, inMap[val]-1)
+		root.Right = helper(inMap[val]+1, right)
+		return root
+	}
+	return helper(0, len(inorder)-1)
+}
+
+// 15. Construct Binary Tree from Inorder and Postorder Traversal
+func buildTreeInPost(inorder []int, postorder []int) *TreeNode {
+	inMap := make(map[int]int)
+	for i, v := range inorder {
+		inMap[v] = i
+	}
+	var helper func(int, int) *TreeNode
+	postIdx := len(postorder) - 1
+	helper = func(left, right int) *TreeNode {
+		if left > right {
+			return nil
+		}
+		val := postorder[postIdx]
+		postIdx--
+		root := &TreeNode{Val: val}
+		root.Right = helper(inMap[val]+1, right)
+		root.Left = helper(left, inMap[val]-1)
+		return root
+	}
+	return helper(0, len(inorder)-1)
+}
+
+// 16. Serialize and Deserialize Binary Tree
+func serialize(root *TreeNode) string {
+	if root == nil {
+		return "#"
+	}
+	return fmt.Sprintf("%d,%s,%s", root.Val, serialize(root.Left), serialize(root.Right))
+}
+
+func deserialize(data string) *TreeNode {
+	vals := split(data, ',')
+	var build func() *TreeNode
+	i := 0
+	build = func() *TreeNode {
+		if vals[i] == "#" {
+			i++
+			return nil
+		}
+		val := atoi(vals[i])
+		i++
+		node := &TreeNode{Val: val}
+		node.Left = build()
+		node.Right = build()
+		return node
+	}
+	return build()
+}
+
+func split(s string, sep byte) []string {
+	var res []string
+	last := 0
+	for i := 0; i < len(s); i++ {
+		if s[i] == sep {
+			res = append(res, s[last:i])
+			last = i + 1
+		}
+	}
+	res = append(res, s[last:])
+	return res
+}
+
+func atoi(s string) int {
+	sign, res, i := 1, 0, 0
+	if len(s) > 0 && s[0] == '-' {
+		sign = -1
+		i++
+	}
+	for ; i < len(s); i++ {
+		res = res*10 + int(s[i]-'0')
+	}
+	return sign * res
+}
+
+// 17. Flatten Binary Tree to Linked List
+func flatten(root *TreeNode) {
+	var prev *TreeNode
+	var dfs func(*TreeNode)
+	dfs = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		dfs(node.Right)
+		dfs(node.Left)
+		node.Right = prev
+		node.Left = nil
+		prev = node
+	}
+	dfs(root)
+}
+
+// 18. Populating Next Right Pointers in Each Node
+type Node struct {
+	Val   int
+	Left  *Node
+	Right *Node
+	Next  *Node
+}
+
+func connect(root *Node) *Node {
+	if root == nil {
+		return nil
+	}
+	queue := []*Node{root}
+	for len(queue) > 0 {
+		n := len(queue)
+		for i := 0; i < n; i++ {
+			node := queue[0]
+			queue = queue[1:]
+			if i < n-1 {
+				node.Next = queue[0]
+			}
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+		}
+	}
+	return root
+}
+
+// 19. Populating Next Right Pointers in Each Node II
+func connectII(root *Node) *Node {
+	if root == nil {
+		return nil
+	}
+	queue := []*Node{root}
+	for len(queue) > 0 {
+		n := len(queue)
+		for i := 0; i < n; i++ {
+			node := queue[0]
+			queue = queue[1:]
+			if i < n-1 {
+				node.Next = queue[0]
+			}
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+		}
+	}
+	return root
+}
+
+// 20. Balanced Binary Tree
+func isBalanced(root *TreeNode) bool {
+	var check func(*TreeNode) int
+	check = func(node *TreeNode) int {
+		if node == nil {
+			return 0
+		}
+		left := check(node.Left)
+		if left == -1 {
+			return -1
+		}
+		right := check(node.Right)
+		if right == -1 {
+			return -1
+		}
+		if abs(left-right) > 1 {
+			return -1
+		}
+		return max(left, right) + 1
+	}
+	return check(root) != -1
+}
+
+func abs(a int) int {
+	if a < 0 {
+		return -a
+	}
+	return a
+}
+
+// 21. Validate Binary Search Tree
+func isValidBST(root *TreeNode) bool {
+	var helper func(*TreeNode, *int, *int) bool
+	helper = func(node *TreeNode, min, max *int) bool {
+		if node == nil {
+			return true
+		}
+		if min != nil && node.Val <= *min {
+			return false
+		}
+		if max != nil && node.Val >= *max {
+			return false
+		}
+		return helper(node.Left, min, &node.Val) && helper(node.Right, &node.Val, max)
+	}
+	return helper(root, nil, nil)
+}
+
+// 22. Kth Smallest Element in a BST
+func kthSmallest(root *TreeNode, k int) int {
+	stack := []*TreeNode{}
+	for {
+		for root != nil {
+			stack = append(stack, root)
+			root = root.Left
+		}
+		root = stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		k--
+		if k == 0 {
+			return root.Val
+		}
+		root = root.Right
+	}
+}
+
+// 23. Lowest Common Ancestor of a Binary Tree
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+	if root == nil || root == p || root == q {
+		return root
+	}
+	left := lowestCommonAncestor(root.Left, p, q)
+	right := lowestCommonAncestor(root.Right, p, q)
+	if left != nil && right != nil {
+		return root
+	}
+	if left != nil {
+		return left
+	}
+	return right
+}
+
+// 24. Diameter of Binary Tree
+func diameterOfBinaryTree(root *TreeNode) int {
+	maxDia := 0
+	var depth func(*TreeNode) int
+	depth = func(node *TreeNode) int {
+		if node == nil {
+			return 0
+		}
+		left := depth(node.Left)
+		right := depth(node.Right)
+		if left+right > maxDia {
+			maxDia = left + right
+		}
+		return max(left, right) + 1
+	}
+	depth(root)
+	return maxDia
+}
+
+// 25. Subtree of Another Tree
+func isSubtree(s *TreeNode, t *TreeNode) bool {
+	if s == nil {
+		return false
+	}
+	if isSameTree(s, t) {
+		return true
+	}
+	return isSubtree(s.Left, t) || isSubtree(s.Right, t)
+}
+
+// 26. Construct Binary Search Tree from Preorder Traversal
+func bstFromPreorder(preorder []int) *TreeNode {
+	var helper func(int, int) *TreeNode
+	idx := 0
+	helper = func(bound, n int) *TreeNode {
+		if idx == n || preorder[idx] > bound {
+			return nil
+		}
+		root := &TreeNode{Val: preorder[idx]}
+		idx++
+		root.Left = helper(root.Val, n)
+		root.Right = helper(bound, n)
+		return root
+	}
+	return helper(1<<31-1, len(preorder))
+}
+
+// 27. Find Leaves of Binary Tree
+func findLeaves(root *TreeNode) [][]int {
+	var res [][]int
+	var dfs func(*TreeNode) int
+	dfs = func(node *TreeNode) int {
+		if node == nil {
+			return -1
+		}
+		level := max(dfs(node.Left), dfs(node.Right)) + 1
+		if level == len(res) {
+			res = append(res, []int{})
+		}
+		res[level] = append(res[level], node.Val)
+		return level
+	}
+	dfs(root)
+	return res
+}
+
+// 28. Binary Tree Paths
+func binaryTreePaths(root *TreeNode) []string {
+	var res []string
+	var dfs func(*TreeNode, string)
+	dfs = func(node *TreeNode, path string) {
+		if node == nil {
+			return
+		}
+		if len(path) > 0 {
+			path += "->"
+		}
+		path += fmt.Sprintf("%d", node.Val)
+		if node.Left == nil && node.Right == nil {
+			res = append(res, path)
+			return
+		}
+		dfs(node.Left, path)
+		dfs(node.Right, path)
+	}
+	dfs(root, "")
+	return res
+}
+
+// 29. Sum of Left Leaves
+func sumOfLeftLeaves(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	sum := 0
+	if root.Left != nil && root.Left.Left == nil && root.Left.Right == nil {
+		sum += root.Left.Val
+	}
+	return sum + sumOfLeftLeaves(root.Left) + sumOfLeftLeaves(root.Right)
+}
+
+// 30. Find Bottom Left Tree Value
+func findBottomLeftValue(root *TreeNode) int {
+	queue := []*TreeNode{root}
+	var res int
+	for len(queue) > 0 {
+		n := len(queue)
+		for i := 0; i < n; i++ {
+			node := queue[0]
+			queue = queue[1:]
+			if i == 0 {
+				res = node.Val
+			}
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+		}
+	}
+	return res
+}
+
+// 31. Merge Two Binary Trees
+func mergeTrees(t1 *TreeNode, t2 *TreeNode) *TreeNode {
+	if t1 == nil {
+		return t2
+	}
+	if t2 == nil {
+		return t1
+	}
+	t1.Val += t2.Val
+	t1.Left = mergeTrees(t1.Left, t2.Left)
+	t1.Right = mergeTrees(t1.Right, t2.Right)
+	return t1
+}
+
+// 32. Binary Tree Tilt
+func findTilt(root *TreeNode) int {
+	tilt := 0
+	var sum func(*TreeNode) int
+	sum = func(node *TreeNode) int {
+		if node == nil {
+			return 0
+		}
+		left := sum(node.Left)
+		right := sum(node.Right)
+		tilt += abs(left - right)
+		return left + right + node.Val
+	}
+	sum(root)
+	return tilt
+}
+
+// 33. Cousins in Binary Tree
+func isCousins(root *TreeNode, x int, y int) bool {
+	var dfs func(*TreeNode, int, int, *int, *int, *int, *int)
+	var xDepth, yDepth, xParent, yParent int
+	xDepth, yDepth, xParent, yParent = -1, -1, -1, -1
+	dfs = func(node *TreeNode, parent, depth int, xDepth, yDepth, xParent, yParent *int) {
+		if node == nil {
+			return
+		}
+		if node.Val == x {
+			*xDepth = depth
+			*xParent = parent
+		}
+		if node.Val == y {
+			*yDepth = depth
+			*yParent = parent
+		}
+		dfs(node.Left, node.Val, depth+1, xDepth, yDepth, xParent, yParent)
+		dfs(node.Right, node.Val, depth+1, xDepth, yDepth, xParent, yParent)
+	}
+	dfs(root, -1, 0, &xDepth, &yDepth, &xParent, &yParent)
+	return xDepth == yDepth && xParent != yParent
+}
+
+// 34. Binary Tree Vertical Order Traversal
+func verticalOrder(root *TreeNode) [][]int {
+	if root == nil {
+		return [][]int{}
+	}
+	type pair struct {
+		node *TreeNode
+		col  int
+	}
+	colMap := map[int][]int{}
+	queue := []pair{{root, 0}}
+	minCol, maxCol := 0, 0
+	for len(queue) > 0 {
+		p := queue[0]
+		queue = queue[1:]
+		colMap[p.col] = append(colMap[p.col], p.node.Val)
+		if p.node.Left != nil {
+			queue = append(queue, pair{p.node.Left, p.col - 1})
+			if p.col-1 < minCol {
+				minCol = p.col - 1
+			}
+		}
+		if p.node.Right != nil {
+			queue = append(queue, pair{p.node.Right, p.col + 1})
+			if p.col+1 > maxCol {
+				maxCol = p.col + 1
+			}
+		}
+	}
+	res := [][]int{}
+	for i := minCol; i <= maxCol; i++ {
+		res = append(res, colMap[i])
+	}
+	return res
+}
+
+// 35. Binary Tree Vertical Traversal
+type pairVT struct {
+	node *TreeNode
+	row  int
+	col  int
+}
+
+func verticalTraversal(root *TreeNode) [][]int {
+	var nodes []pairVT
+	var dfs func(*TreeNode, int, int)
+	dfs = func(node *TreeNode, row, col int) {
+		if node == nil {
+			return
+		}
+		nodes = append(nodes, pairVT{node, row, col})
+		dfs(node.Left, row+1, col-1)
+		dfs(node.Right, row+1, col+1)
+	}
+	dfs(root, 0, 0)
+	// Sort by col, then row, then value
+	sort.Slice(nodes, func(i, j int) bool {
+		if nodes[i].col != nodes[j].col {
+			return nodes[i].col < nodes[j].col
+		}
+		if nodes[i].row != nodes[j].row {
+			return nodes[i].row < nodes[j].row
+		}
+		return nodes[i].node.Val < nodes[j].node.Val
+	})
+	res := [][]int{}
+	prevCol := nodes[0].col
+	cur := []int{}
+	for _, n := range nodes {
+		if n.col != prevCol {
+			res = append(res, cur)
+			cur = []int{}
+			prevCol = n.col
+		}
+		cur = append(cur, n.node.Val)
+	}
+	res = append(res, cur)
+	return res
+}
+
+// 36. Binary Tree Level Order Traversal II
+func levelOrderBottom(root *TreeNode) [][]int {
+	res := [][]int{}
+	if root == nil {
+		return res
+	}
+	queue := []*TreeNode{root}
+	for len(queue) > 0 {
+		level := []int{}
+		n := len(queue)
+		for i := 0; i < n; i++ {
+			node := queue[0]
+			queue = queue[1:]
+			level = append(level, node.Val)
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+		}
+		res = append([][]int{level}, res...)
+	}
+	return res
+}
+
+// 37. Binary Tree Cameras
+func minCameraCover(root *TreeNode) int {
+	const (
+		NOT_MONITORED = 0
+		HAS_CAMERA    = 1
+		MONITORED     = 2
+	)
+	res := 0
+	var dfs func(*TreeNode) int
+	dfs = func(node *TreeNode) int {
+		if node == nil {
+			return MONITORED
+		}
+		left := dfs(node.Left)
+		right := dfs(node.Right)
+		if left == NOT_MONITORED || right == NOT_MONITORED {
+			res++
+			return HAS_CAMERA
+		}
+		if left == HAS_CAMERA || right == HAS_CAMERA {
+			return MONITORED
+		}
+		return NOT_MONITORED
+	}
+	if dfs(root) == NOT_MONITORED {
+		res++
+	}
+	return res
+}
+
+// 38. Largest BST Subtree
+func largestBSTSubtree(root *TreeNode) int {
+	maxSize := 0
+	var helper func(*TreeNode) (bool, int, int, int)
+	helper = func(node *TreeNode) (bool, int, int, int) {
+		if node == nil {
+			return true, 0, 1<<31 - 1, -1 << 31
+		}
+		lBST, lSize, lMin, lMax := helper(node.Left)
+		rBST, rSize, rMin, rMax := helper(node.Right)
+		if lBST && rBST && node.Val > lMax && node.Val < rMin {
+			size := lSize + rSize + 1
+			if size > maxSize {
+				maxSize = size
+			}
+			return true, size, min(lMin, node.Val), max(rMax, node.Val)
+		}
+		return false, 0, 0, 0
+	}
+	helper(root)
+	return maxSize
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+// 39. Recover Binary Search Tree
+func recoverTree(root *TreeNode) {
+	var first, second, prev *TreeNode
+	var inorder func(*TreeNode)
+	inorder = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		inorder(node.Left)
+		if prev != nil && node.Val < prev.Val {
+			if first == nil {
+				first = prev
+			}
+			second = node
+		}
+		prev = node
+		inorder(node.Right)
+	}
+	inorder(root)
+	if first != nil && second != nil {
+		first.Val, second.Val = second.Val, first.Val
+	}
+}
+
+// 40. Trim a Binary Search Tree
+func trimBST(root *TreeNode, low int, high int) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	if root.Val < low {
+		return trimBST(root.Right, low, high)
+	}
+	if root.Val > high {
+		return trimBST(root.Left, low, high)
+	}
+	root.Left = trimBST(root.Left, low, high)
+	root.Right = trimBST(root.Right, low, high)
+	return root
+}
+
+// 41. Delete Node in a BST
+func deleteNode(root *TreeNode, key int) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	if key < root.Val {
+		root.Left = deleteNode(root.Left, key)
+	} else if key > root.Val {
+		root.Right = deleteNode(root.Right, key)
+	} else {
+		if root.Left == nil {
+			return root.Right
+		}
+		if root.Right == nil {
+			return root.Left
+		}
+		minNode := root.Right
+		for minNode.Left != nil {
+			minNode = minNode.Left
+		}
+		root.Val = minNode.Val
+		root.Right = deleteNode(root.Right, minNode.Val)
+	}
+	return root
+}
+
+// 42. Count Complete Tree Nodes
+func countNodes(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	l, r := root, root
+	leftDepth, rightDepth := 0, 0
+	for l != nil {
+		leftDepth++
+		l = l.Left
+	}
+	for r != nil {
+		rightDepth++
+		r = r.Right
+	}
+	if leftDepth == rightDepth {
+		return (1 << leftDepth) - 1
+	}
+	return 1 + countNodes(root.Left) + countNodes(root.Right)
+}
+
+// 43. Boundary of Binary Tree
+func boundaryOfBinaryTree(root *TreeNode) []int {
+	if root == nil {
+		return nil
+	}
+	res := []int{root.Val}
+	isLeaf := func(node *TreeNode) bool {
+		return node != nil && node.Left == nil && node.Right == nil
+	}
+	var addLeft func(*TreeNode)
+	addLeft = func(node *TreeNode) {
+		for node != nil {
+			if !isLeaf(node) {
+				res = append(res, node.Val)
+			}
+			if node.Left != nil {
+				node = node.Left
+			} else {
+				node = node.Right
+			}
+		}
+	}
+	var addLeaves func(*TreeNode)
+	addLeaves = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		if isLeaf(node) {
+			res = append(res, node.Val)
+		}
+		addLeaves(node.Left)
+		addLeaves(node.Right)
+	}
+	var addRight func(*TreeNode)
+	rights := []int{}
+	addRight = func(node *TreeNode) {
+		for node != nil {
+			if !isLeaf(node) {
+				rights = append(rights, node.Val)
+			}
+			if node.Right != nil {
+				node = node.Right
+			} else {
+				node = node.Left
+			}
+		}
+	}
+	addLeft(root.Left)
+	addLeaves(root.Left)
+	addLeaves(root.Right)
+	addRight(root.Right)
+	for i := len(rights) - 1; i >= 0; i-- {
+		res = append(res, rights[i])
+	}
+	return res
+}
+
+// 44. Sum Root to Leaf Numbers
+func sumNumbers(root *TreeNode) int {
+	var dfs func(*TreeNode, int) int
+	dfs = func(node *TreeNode, num int) int {
+		if node == nil {
+			return 0
+		}
+		num = num*10 + node.Val
+		if node.Left == nil && node.Right == nil {
+			return num
+		}
+		return dfs(node.Left, num) + dfs(node.Right, num)
+	}
+	return dfs(root, 0)
+}
+
+// 45. Convert BST to Greater Tree
+func convertBST(root *TreeNode) *TreeNode {
+	sum := 0
+	var dfs func(*TreeNode)
+	dfs = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		dfs(node.Right)
+		sum += node.Val
+		node.Val = sum
+		dfs(node.Left)
+	}
+	dfs(root)
+	return root
+}
+
+// 46. Count Univalue Subtrees
+func countUnivalSubtrees(root *TreeNode) int {
+	count := 0
+	var dfs func(*TreeNode) bool
+	dfs = func(node *TreeNode) bool {
+		if node == nil {
+			return true
+		}
+		left := dfs(node.Left)
+		right := dfs(node.Right)
+		if left && right {
+			if node.Left != nil && node.Left.Val != node.Val {
+				return false
+			}
+			if node.Right != nil && node.Right.Val != node.Val {
+				return false
+			}
+			count++
+			return true
+		}
+		return false
+	}
+	dfs(root)
+	return count
+}
+
+// 47. Closest Binary Search Tree Value
+func closestValue(root *TreeNode, target float64) int {
+	closest := root.Val
+	for root != nil {
+		if absFloat(float64(root.Val)-target) < absFloat(float64(closest)-target) {
+			closest = root.Val
+		}
+		if target < float64(root.Val) {
+			root = root.Left
+		} else {
+			root = root.Right
+		}
+	}
+	return closest
+}
+
+func absFloat(a float64) float64 {
+	if a < 0 {
+		return -a
+	}
+	return a
+}
+
+// 48. Closest Binary Search Tree Value II
+func closestKValues(root *TreeNode, target float64, k int) []int {
+	var inorder func(*TreeNode)
+	var vals []int
+	inorder = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		inorder(node.Left)
+		vals = append(vals, node.Val)
+		inorder(node.Right)
+	}
+	inorder(root)
+	// Find the closest k values
+	sort.Slice(vals, func(i, j int) bool {
+		return absFloat(float64(vals[i])-target) < absFloat(float64(vals[j])-target)
+	})
+	return vals[:k]
+}
+
+// 49. Find Mode in Binary Search Tree
+func findMode(root *TreeNode) []int {
+	var res []int
+	var prev *TreeNode
+	maxCount, count := 0, 0
+	var inorder func(*TreeNode)
+	inorder = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		inorder(node.Left)
+		if prev != nil && node.Val == prev.Val {
+			count++
+		} else {
+			count = 1
+		}
+		if count > maxCount {
+			maxCount = count
+			res = []int{node.Val}
+		} else if count == maxCount {
+			res = append(res, node.Val)
+		}
+		prev = node
+		inorder(node.Right)
+	}
+	inorder(root)
+	return res
+}
+
+// 50. Maximum Width of Binary Tree
+func widthOfBinaryTree(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	type pair struct {
+		node  *TreeNode
+		index int
+	}
+	maxWidth := 0
+	queue := []pair{{root, 1}}
+	for len(queue) > 0 {
+		n := len(queue)
+		start, end := queue[0].index, queue[n-1].index
+		if end-start+1 > maxWidth {
+			maxWidth = end - start + 1
+		}
+		for i := 0; i < n; i++ {
+			p := queue[0]
+			queue = queue[1:]
+			if p.node.Left != nil {
+				queue = append(queue, pair{p.node.Left, 2 * p.index})
+			}
+			if p.node.Right != nil {
+				queue = append(queue, pair{p.node.Right, 2*p.index + 1})
+			}
+		}
+	}
+	return maxWidth
+}
+
+// ---
+// Explanation:
+// Each function above solves a classic binary tree problem. Traversals (1-5) visit nodes in different orders. Depth functions (6-7) find tree height. Symmetry, sameness, and inversion (8-10) check or modify structure. Path sum problems (11-12) find root-to-leaf sums. Construction (14-15, 26) rebuilds trees from traversals. Serialization (16) encodes/decodes trees. Flattening (17) makes a linked list. Next pointers (18-19) connect siblings. Balance and BST checks (20-21) validate structure. Kth smallest (22) and closest value (47-48) use BST properties. LCA (23) finds common ancestors. Diameter (24) and width (50) measure tree shape. Subtree, merge, tilt, cousins, vertical order, leaves, paths, left leaves, bottom left, cameras, largest BST, recover, trim, delete, count nodes, boundary, sum root-to-leaf, greater tree, univalue, mode, etc. all solve specific tree tasks. Each function is self-contained and can be tested with a constructed binary tree.
